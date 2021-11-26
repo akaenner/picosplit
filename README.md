@@ -2,7 +2,7 @@
 
 # Introduction
 
-PicoSplit is a DIY 3D-printed split keyboard that uses two Raspberry Pi Pico controllers with a CircuitPython based firmware. **This repository contains the firmware.** You can find the building instructions for the hardware and the 3D files on my homepage: [PicoSplit Home](http://kaenner.de/picosplit.html).
+PicoSplit is a DIY 3D-printed split keyboard that uses two Raspberry Pi Pico controllers with a CircuitPython based firmware. **This repository contains the firmware.** You can find the building instructions for the hardware and the 3D files on my homepage: [PicoSplit Home](https://kaenner.de/picosplit).
 
 
 # PicoSplit keyboard
