@@ -1,0 +1,3 @@
+Adafruit CircuitPython 5.0.0-alpha.0-11771-g13210d2cc-dirty on 2021-10-15; Raspberry Pi Pico with rp2040
+Board ID:raspberry_pi_pico
+boot.py output:
