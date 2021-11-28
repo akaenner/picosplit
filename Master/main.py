@@ -24,34 +24,39 @@
 
 import board
 import time
+import microcontroller
+
 from lib.picosplit.config_loader import ConfigLoader
 from lib.picosplit.split_keypad import SplitKeypad
 
 
 # Sleep for a bit to avoid a race condition on some systems
 time.sleep(1)
-
-# load the configuration from the config.kbdconfig file
-loader = ConfigLoader(configFilePath="layout.js") 
-kb = loader.keyboard(SplitKeypad(20, 
-						(board.GP2,
-						 board.GP3,
-						 board.GP4,
-						 board.GP5,
-						 board.GP6,
-						 board.GP7,
-						 board.GP8,
-						 board.GP9,
-						 board.GP10,
-						 board.GP11,
-						 board.GP12,
-						 board.GP13,
-						 board.GP14,
-						 board.GP15,
-						 board.GP16,
-						 board.GP17,
-						 board.GP18,
-						 board.GP19,
-						 board.GP20,
-						 board.GP21)))
-kb.start()
+try:
+	# load the configuration from the config.kbdconfig file
+	loader = ConfigLoader(configFilePath="layout.js") 
+	kb = loader.keyboard(SplitKeypad(20, 
+							(board.GP2,
+							 board.GP3,
+							 board.GP4,
+							 board.GP5,
+							 board.GP6,
+							 board.GP7,
+							 board.GP8,
+							 board.GP9,
+							 board.GP10,
+							 board.GP11,
+							 board.GP12,
+							 board.GP13,
+							 board.GP14,
+							 board.GP15,
+							 board.GP16,
+							 board.GP17,
+							 board.GP18,
+							 board.GP19,
+							 board.GP20,
+							 board.GP21)))
+						 kb.start()
+except:
+	microcontroller.reset()
+	
