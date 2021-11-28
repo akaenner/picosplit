@@ -33,7 +33,7 @@ from lib.picosplit.split_keypad import SplitKeypad
 # Sleep for a bit to avoid a race condition on some systems
 time.sleep(1)
 try:
-	# load the configuration from the config.kbdconfig file
+	# load the configuration from the layout.js file
 	loader = ConfigLoader(configFilePath="layout.js") 
 	kb = loader.keyboard(SplitKeypad(20, 
 							(board.GP2,
