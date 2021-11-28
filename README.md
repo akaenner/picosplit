@@ -33,9 +33,9 @@ I originally developed this firmware to try out the [Miryoku layout](https://git
 
 ## Limitations
 
-The PicoSplit firmware is based on CircuitPython. Currently USB keyboards created with CircuitPython do not work in all situations. For example: On my Intel iMac (macOS 11.x), I can not enter the login password if the hard disk is encrypted and waking up that Mac from sleep by pressing a key on the PicoSplit does not work (see [discussion](https://github.com/adafruit/circuitpython/issues/1136#issuecomment-942177135)).
+The PicoSplit firmware is based on CircuitPython. Currently USB keyboards created with CircuitPython do not work in all situations. For example: On my Intel iMac (macOS 11.x), I can not enter the login password if the hard disk is encrypted and waking up that Mac from sleep by pressing a key on the PicoSplit does not work (see [discussion](https://github.com/adafruit/circuitpython/issues/1136#issuecomment-942177135)). You may encounter similar problems on Windows and Linux.
 
-On the other hand, I can use the PicoSplit with a M1 MacBook without problems. So it depends. There are fewer problems on Windows and Linux, and the keyboard works with my iOS and Android devices too.
+On the other hand, I can use the PicoSplit with a M1 MacBook without problems and it works with my iOS and Android devices. So it depends.
 
 ## Circuit diagram
 
