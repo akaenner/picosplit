@@ -57,6 +57,6 @@ try:
 							 board.GP20,
 							 board.GP21)))
 						 kb.start()
-except:
+except Exception:
 	microcontroller.reset()
 	
