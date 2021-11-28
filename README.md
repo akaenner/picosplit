@@ -56,27 +56,26 @@ Here you can see how the TRRS jacks are wired to the controllers in the [PicoSpl
 If you want to build a different keyboard than the PicoSplit keyboard, you may want to change the number of keys. You can do that for the master keyboard in the file **Master/main.py**. Add or remove pins from the tuple which is passed as the second parameter to SplitKeypad.
 
 ```
-kb = loader.keyboard(SplitKeypad(20, 
-						(board.GP2,
-						 board.GP3,
-						 board.GP4,
-						 board.GP5,
-						 board.GP6,
-						 board.GP7,
-						 board.GP8,
-						 board.GP9,
-						 board.GP10,
-						 board.GP11,
-						 board.GP12,
-						 board.GP13,
-						 board.GP14,
-						 board.GP15,
-						 board.GP16,
-						 board.GP17,
-						 board.GP18,
-						 board.GP19,
-						 board.GP20,
-						 board.GP21)))
+kb = loader.keyboard(SplitKeypad(20, (board.GP2,
+		  board.GP3,
+		  board.GP4,
+		  board.GP5,
+		  board.GP6,
+		  board.GP7,
+		  board.GP8,
+		  board.GP9,
+		  board.GP10,
+		  board.GP11,
+		  board.GP12,
+		  board.GP13,
+		  board.GP14,
+		  board.GP15,
+		  board.GP16,
+		  board.GP17,
+		  board.GP18,
+		  board.GP19,
+		  board.GP20,
+		  board.GP21)))
 ```
 
 Change `self.key_pins` in **Slave/main.py** if you want to adjust the number of keys or the pins used in the slave keyboard. 
