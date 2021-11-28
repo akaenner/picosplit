@@ -267,7 +267,7 @@ Resets the keyboard.
 
 This is the default PicoSplit layout:
 
-![Layout](media/Layout.png)
+![Layout](Images/Layout.png)
 
 The layout is well thought out. I use it on a Mac with an English keyboard setting but you can also type umlauts with it. Although only a few keys are available, you can type all the usual characters. You even have two unassigned keys (16 and 39) at your disposal.
 
