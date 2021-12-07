@@ -45,7 +45,7 @@ class SplitKeypad(Keypad):
         self._last_own_pressed_buttons = 0
         self._last_other_pressed_buttons = 0
         self.key_pins = pins
-        self.keys = keypad.Keys(self.key_pins, value_when_pressed=True, pull=True)
+        self.keys = keypad.Keys(self.key_pins, value_when_pressed=False, pull=True)
         self.states = [False] * self.keys.key_count
         self.own_button_count = len(self.key_pins)
         self.button_count = self.own_button_count + numberOfSlaveKeys

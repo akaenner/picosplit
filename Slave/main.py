@@ -56,7 +56,7 @@ class SlaveKeypad:
                          board.GP19,
                          board.GP20,
                          board.GP21)
-        self.keys = keypad.Keys(self.key_pins, value_when_pressed=True, pull=True)
+        self.keys = keypad.Keys(self.key_pins, value_when_pressed=False, pull=True)
         self.states = [False] * self.keys.key_count
 
     def value(self):

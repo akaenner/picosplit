@@ -4,7 +4,6 @@
 
 PicoSplit is a DIY 3D-printed split keyboard that uses two Raspberry Pi Pico controllers with a CircuitPython based firmware. **This repository contains the firmware.** You can find the building instructions for the hardware and the 3D files on my homepage: [PicoSplit Home](https://kaenner.de/picosplit).
 
-
 # PicoSplit keyboard
 
 - Fully 3D-printable with common FDM printers.
@@ -57,28 +56,29 @@ If you want to build a different keyboard than the PicoSplit keyboard, you may w
 
 ```
 kb = loader.keyboard(SplitKeypad(20, (board.GP2,
-		  board.GP3,
-		  board.GP4,
-		  board.GP5,
-		  board.GP6,
-		  board.GP7,
-		  board.GP8,
-		  board.GP9,
-		  board.GP10,
-		  board.GP11,
-		  board.GP12,
-		  board.GP13,
-		  board.GP14,
-		  board.GP15,
-		  board.GP16,
-		  board.GP17,
-		  board.GP18,
-		  board.GP19,
-		  board.GP20,
-		  board.GP21)))
+          board.GP3,
+          board.GP4,
+          board.GP5,
+          board.GP6,
+          board.GP7,
+          board.GP8,
+          board.GP9,
+          board.GP10,
+          board.GP11,
+          board.GP12,
+          board.GP13,
+          board.GP14,
+          board.GP15,
+          board.GP16,
+          board.GP17,
+          board.GP18,
+          board.GP19,
+          board.GP20,
+          board.GP21)))
 ```
 
 Change `self.key_pins` in **Slave/main.py** if you want to adjust the number of keys or the pins used in the slave keyboard. 
+
 ```
  self.key_pins = (board.GP2,
                   board.GP3,
@@ -112,7 +112,7 @@ kb = loader.keyboard(SplitKeypad( 20, ...
 
 The PicoSplit-Firmware is based on CircuitPython version 7.1. Previous versions do not work. Go to [https://circuitpython.org/board/raspberry_pi_pico/](https://circuitpython.org/board/raspberry_pi_pico/) and install CircuitPython on both keyboard halves. Then proceed with the next steps.
 
-### Slave 
+### Slave
 
 1. Connect the slave keyboard to your computer. 
 2. A USB drive with the name CIRCUITPY appears inside the Finder (macOS) or Explorer (Windows).
@@ -153,7 +153,7 @@ The recorded hardware key number is now visible at the center of the key (**25**
 
 If a **mapping.js** file is availabe on the keyboard, the keyboard stops emitting hardware key numbers and instead emits the key codes defined by the rules in **layout.js**.
 
-### Creating an own key arrangement
+### Creating your own key arrangement
 
 The key arrangement is not hard coded. You can change it by modifying the file **keypositions.js**. A line in this file starts with the layout key number followed by the position and the rotation of the key. 
 
@@ -180,7 +180,7 @@ The PinMapper.html file then shows these keys:
 
 The keyboard layout is defined in **layout.js**. If you wonder why these and other files have the extension **.js**: They can be loaded as Javascript into a locally opened HTML page. For example: **PinMapper.html** uses this mechanism to read the key positions from **keypositions.js**. There is actually no HTML based tool for managing **layout.js**, but maybe there will be one in the future. 
 
-#### Sections 
+#### Sections
 
 **layout.js** consists of sections. Each section begins with a section keyword in one line and ends with the next empty line. These are the three available section types:
 
@@ -190,7 +190,7 @@ The keyboard layout is defined in **layout.js**. If you wonder why these and oth
 
 The order and count is important. It starts with the keyboard section, followed by a layout section and finally one or more layer sections.
 
-#### Keyboard section 
+#### Keyboard section
 
 The keyboard section defines some timeouts which apply to all keys. 
 
@@ -199,7 +199,9 @@ keyboard
 tap_timeout=0.15
 long_tap_timeout=0.4
 ```
+
 To describe these values, I would like to briefly discuss various action triggers. The PicoSplit firmware supports three triggers for each key:
+
 - tap
 - long_tap
 - hold
@@ -212,7 +214,7 @@ A **hold action** is immediately triggered when you press a key. If you release 
 
 You are probably wondering what this is good for? With the hold action you can assign modifiers to keys which are normally used to type characters. The PicoSplit keyboard uses hold actions to put all modifiers on the home position keys. Hold actions are also used to activate some layers. 
 
-#### Layout section 
+#### Layout section
 
 The layout section has just one property, the name of the layout. Currently **layout.js** can have only one layout section.
 
@@ -221,7 +223,7 @@ layout
 name=US macOS
 ```
 
-#### Layer section 
+#### Layer section
 
 A layer has a name. It contains rules for action triggers (`tap`, `long_tap` or `hold`). There must be at least one layer - the base layer - and you can define multiple additional layers. Only one layer can be active at any time. However, rules do not have to be defined for all keys on each layer. For keys without a rule, the rule from the base layer is used.
 
@@ -237,7 +239,7 @@ name=Base
 layer
 name=Special
 18 : tap=ResetKeyboard
-                
+
 layer
 name=Umlaut
  6 : tap=Sequence[Codes[ LEFT_ALT, U ]; Codes[ A ]] : long_tap=Sequence[Codes[ LEFT_ALT, U ]; Codes[ LEFT_SHIFT, A ]] : hold=Codes[ LEFT_GUI ]
@@ -273,6 +275,7 @@ The layout is well thought out. I use it on a Mac with an English keyboard setti
 ## Keyboard modes and boot behavior
 
 The keyboard has two operating modes:
+
 1. If the PicoSplit is not in maintenance mode, it is a single keyboard device. 
 2. If it is in maintenance mode, it shows up as a keyboard and as a USB memory drive. 
 
@@ -283,15 +286,3 @@ If you want to always boot the keyboard in maintenance mode set maintenance_mode
 ```
 maintenance_mode = True
 ```
-
-
-
-
-
-
-
-
-
-
-
-
