@@ -30,7 +30,7 @@ import usb_midi
 import usb_cdc
 import storage
 
-maintenance_mode = False
+maintenance_mode = True
 
 buttons = []
 buttons.append(DigitalInOut(board.GP2))
@@ -63,8 +63,8 @@ finally:
 
 for button in buttons:
     button.direction = Direction.INPUT
-    button.pull = Pull.DOWN
-    if button.value:
+    button.pull = Pull.UP
+    if not button.value:
         maintenance_mode = True
 
 if not maintenance_mode:
