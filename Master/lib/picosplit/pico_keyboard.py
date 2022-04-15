@@ -227,7 +227,7 @@ class Key:
             elif self.tap_is_active:
                 self.tap.on_key_up(self, controller)
 
-            if self.state == Key.LONG_DOWN:                
+            if self.state == Key.LONG_DOWN or ( self.state == Key.LONG_PRESS and not self.hold ):             
                 if self.long_tap and Key.last_pressed == self:
                     self.long_tap.on_key_down(self, controller)
                     self.long_tap.on_key_up(self, controller)                            
